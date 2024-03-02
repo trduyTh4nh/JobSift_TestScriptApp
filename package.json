@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "webdriverio": "^8.32.3"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
   }
 }

@@ -6,20 +6,24 @@ const env = require('dotenv').config()
 const ENVIRONMENT_VAR = process.env;
 const IS_WINDOWS = process.platform === "win32";
 console.log(IS_WINDOWS)
-const capabilities = {
-  platformName: 'Android',
-  'appium:automationName': 'UiAutomator2',
-  'appium:deviceName': 'Android',
-  'appium:appPackage': 'com.jobapp',
-  'appium:appActivity': '.MainActivity',
-};
 
-const wdOpts = {
-  hostname: process.env.APPIUM_HOST || 'localhost',
-  port: parseInt(process.env.APPIUM_PORT, 10) || 4723,
-  logLevel: 'info',
-  capabilities,
-};
 
-ungtuyen.runTest(wdOpts)
+const testLogout = require('./Test_Fuction/logout')
+const testLogin = require('./Test_Fuction/login')
+const testLoginFail = require('./Test_Fuction/loginFail')
+const testBuyDimond = require('./Test_Fuction/buyDimond')
+const workbook = XLSX.readFile(IS_WINDOWS ? ENVIRONMENT_VAR.PATH_WIN : ENVIRONMENT_VAR.PATH_MAC)
+async function loginSuccess() {
+  try {
 
+    // TestloginSuccess.loginSuccess()
+    // TestloginSuccess.loginFail()
+    //testLoginFail.loginFail()
+    testBuyDimond.buyDimondSuccess()
+
+  } finally {
+
+  }
+}
+
+loginSuccess().catch(console.error);

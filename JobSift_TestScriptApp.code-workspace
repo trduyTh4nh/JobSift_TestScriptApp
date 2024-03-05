@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../../JobSift"
+		},
+		{
+			"path": "../../JobSiftSC/JobSift_BackEnd"
+		}
+	],
+	"settings": {}
+}

@@ -1,4 +1,5 @@
 
+const {expect, test} = require('@jest/globals');
 const { remote } = require('webdriverio');
 const XLSX = require('xlsx');
 const ungtuyen = require('./ung_tuyen')
@@ -21,5 +22,7 @@ const wdOpts = {
   capabilities,
 };
 
-ungtuyen.runTest(wdOpts)
-
+test('Ứng tuyển bằng CV PDF', async () => { 
+    var res = await ungtuyen.runTest(wdOpts)
+    expect(res).toBe(true)
+ })
